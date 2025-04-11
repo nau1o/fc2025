@@ -1,0 +1,33 @@
+/home/naynn/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:270: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running egg_info
+creating ../../build/node_test/node_test.egg-info
+writing ../../build/node_test/node_test.egg-info/PKG-INFO
+writing dependency_links to ../../build/node_test/node_test.egg-info/dependency_links.txt
+writing requirements to ../../build/node_test/node_test.egg-info/requires.txt
+writing top-level names to ../../build/node_test/node_test.egg-info/top_level.txt
+writing manifest file '../../build/node_test/node_test.egg-info/SOURCES.txt'
+reading manifest file '../../build/node_test/node_test.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/node_test/node_test.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/naynn/Documents/fc2025/fc2025/build/node_test/build/lib/node_test
+copying node_test/__init__.py -> /home/naynn/Documents/fc2025/fc2025/build/node_test/build/lib/node_test
+copying node_test/node_test.py -> /home/naynn/Documents/fc2025/fc2025/build/node_test/build/lib/node_test
+running install
+running install_lib
+creating /home/naynn/Documents/fc2025/fc2025/install/node_test/lib/python3.10/site-packages/node_test
+copying /home/naynn/Documents/fc2025/fc2025/build/node_test/build/lib/node_test/__init__.py -> /home/naynn/Documents/fc2025/fc2025/install/node_test/lib/python3.10/site-packages/node_test
+copying /home/naynn/Documents/fc2025/fc2025/build/node_test/build/lib/node_test/node_test.py -> /home/naynn/Documents/fc2025/fc2025/install/node_test/lib/python3.10/site-packages/node_test
+byte-compiling /home/naynn/Documents/fc2025/fc2025/install/node_test/lib/python3.10/site-packages/node_test/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/naynn/Documents/fc2025/fc2025/install/node_test/lib/python3.10/site-packages/node_test/node_test.py to node_test.cpython-310.pyc
+Sorry: IndentationError: expected an indented block after 'if' statement on line 27 (node_test.py, line 29)
+running install_data
+creating /home/naynn/Documents/fc2025/fc2025/install/node_test/share/ament_index/resource_index/packages
+copying resource/node_test -> /home/naynn/Documents/fc2025/fc2025/install/node_test/share/ament_index/resource_index/packages
+copying package.xml -> /home/naynn/Documents/fc2025/fc2025/install/node_test/share/node_test
+running install_egg_info
+Copying ../../build/node_test/node_test.egg-info to /home/naynn/Documents/fc2025/fc2025/install/node_test/lib/python3.10/site-packages/node_test-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/build/node_test/install.log'

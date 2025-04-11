@@ -1,0 +1,2 @@
+[console_scripts]
+node = node_test.node_test:main

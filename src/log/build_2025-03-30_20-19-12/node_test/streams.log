@@ -1,0 +1,28 @@
+[0.757s] Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/node_test': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/node_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/node_test build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log --single-version-externally-managed install_data
+[0.900s] running egg_info
+[0.908s] writing ../build/node_test/node_test.egg-info/PKG-INFO
+[0.908s] writing dependency_links to ../build/node_test/node_test.egg-info/dependency_links.txt
+[0.909s] writing entry points to ../build/node_test/node_test.egg-info/entry_points.txt
+[0.909s] writing requirements to ../build/node_test/node_test.egg-info/requires.txt
+[0.909s] writing top-level names to ../build/node_test/node_test.egg-info/top_level.txt
+[0.980s] reading manifest file '../build/node_test/node_test.egg-info/SOURCES.txt'
+[0.981s] adding license file 'LICENSE'
+[0.981s] writing manifest file '../build/node_test/node_test.egg-info/SOURCES.txt'
+[0.981s] running build
+[0.982s] running build_py
+[0.982s] copying node_test/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test
+[0.982s] copying node_test/node_test.py -> /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test
+[0.982s] running install
+[0.985s] running install_lib
+[0.993s] copying /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test/node_test.py -> /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test
+[0.993s] byte-compiling /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test/node_test.py to node_test.cpython-310.pyc
+[0.994s] running install_data
+[0.994s] copying resource/node_test -> /home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/ament_index/resource_index/packages
+[0.994s] copying package.xml -> /home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test
+[0.995s] running install_egg_info
+[1.003s] removing '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test-0.0.0-py3.10.egg-info' (and everything under it)
+[1.004s] Copying ../build/node_test/node_test.egg-info to /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test-0.0.0-py3.10.egg-info
+[1.004s] running install_scripts
+[1.025s] Installing node script to /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/node_test
+[1.026s] writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log'
+[1.044s] Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/node_test' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/node_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/node_test build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log --single-version-externally-managed install_data

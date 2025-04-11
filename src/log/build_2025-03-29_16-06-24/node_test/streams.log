@@ -1,0 +1,35 @@
+[0.750s] Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/node_test': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/node_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/node_test build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log --single-version-externally-managed install_data
+[0.841s] /home/naynn/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:270: UserWarning: Unknown distribution option: 'tests_require'
+[0.841s]   warnings.warn(msg)
+[0.890s] running egg_info
+[0.898s] creating ../build/node_test/node_test.egg-info
+[0.898s] writing ../build/node_test/node_test.egg-info/PKG-INFO
+[0.899s] writing dependency_links to ../build/node_test/node_test.egg-info/dependency_links.txt
+[0.899s] writing requirements to ../build/node_test/node_test.egg-info/requires.txt
+[0.899s] writing top-level names to ../build/node_test/node_test.egg-info/top_level.txt
+[0.952s] writing manifest file '../build/node_test/node_test.egg-info/SOURCES.txt'
+[0.971s] reading manifest file '../build/node_test/node_test.egg-info/SOURCES.txt'
+[0.971s] adding license file 'LICENSE'
+[0.972s] writing manifest file '../build/node_test/node_test.egg-info/SOURCES.txt'
+[0.972s] running build
+[0.972s] running build_py
+[0.972s] creating /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test
+[0.972s] copying node_test/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test
+[0.972s] copying node_test/node_test.py -> /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test
+[0.972s] running install
+[0.975s] running install_lib
+[0.983s] creating /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test
+[0.983s] copying /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test
+[0.983s] copying /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test/node_test.py -> /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test
+[0.984s] byte-compiling /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test/__init__.py to __init__.cpython-310.pyc
+[0.984s] byte-compiling /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test/node_test.py to node_test.cpython-310.pyc
+[0.984s] Sorry: IndentationError: expected an indented block after 'if' statement on line 27 (node_test.py, line 29)
+[0.984s] running install_data
+[0.984s] creating /home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/ament_index/resource_index/packages
+[0.984s] copying resource/node_test -> /home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/ament_index/resource_index/packages
+[0.984s] copying package.xml -> /home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test
+[0.985s] running install_egg_info
+[0.993s] Copying ../build/node_test/node_test.egg-info to /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test-0.0.0-py3.10.egg-info
+[0.994s] running install_scripts
+[1.016s] writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log'
+[1.035s] Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/node_test' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/node_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/node_test build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log --single-version-externally-managed install_data

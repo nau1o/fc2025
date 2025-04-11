@@ -1,0 +1,3 @@
+[console_scripts]
+pose_node = visualize.pose_node:main
+trajectory_node = visualize.trajectory_node:main

@@ -1,0 +1,5 @@
+  File "/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test/node_test.py", line 134
+    req.waypoints.extend(self.generate_curve_line_waypoints(ret1, subsidiary_point1,(1/3)np.pi,True,increase=18.)[::-1][2:-1])
+                                                                                     ^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+

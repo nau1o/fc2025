@@ -1,0 +1,25 @@
+running egg_info
+writing ../../build/visualize/visualize.egg-info/PKG-INFO
+writing dependency_links to ../../build/visualize/visualize.egg-info/dependency_links.txt
+writing entry points to ../../build/visualize/visualize.egg-info/entry_points.txt
+writing requirements to ../../build/visualize/visualize.egg-info/requires.txt
+writing top-level names to ../../build/visualize/visualize.egg-info/top_level.txt
+reading manifest file '../../build/visualize/visualize.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/visualize/visualize.egg-info/SOURCES.txt'
+running build
+running build_py
+copying visualize/__init__.py -> /home/naynn/Documents/fc2025/fc2025/build/visualize/build/lib/visualize
+running install
+running install_lib
+running install_data
+copying resource/visualize -> /home/naynn/Documents/fc2025/fc2025/install/visualize/share/ament_index/resource_index/packages
+copying package.xml -> /home/naynn/Documents/fc2025/fc2025/install/visualize/share/visualize
+copying launch/visualize.launch.py -> /home/naynn/Documents/fc2025/fc2025/install/visualize/share/visualize/launch
+running install_egg_info
+removing '/home/naynn/Documents/fc2025/fc2025/install/visualize/lib/python3.10/site-packages/visualize-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/visualize/visualize.egg-info to /home/naynn/Documents/fc2025/fc2025/install/visualize/lib/python3.10/site-packages/visualize-0.0.0-py3.10.egg-info
+running install_scripts
+Installing pose_node script to /home/naynn/Documents/fc2025/fc2025/install/visualize/lib/visualize
+Installing trajectory_node script to /home/naynn/Documents/fc2025/fc2025/install/visualize/lib/visualize
+writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/build/visualize/install.log'

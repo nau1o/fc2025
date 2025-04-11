@@ -1,0 +1,5 @@
+  File "/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test/node_test.py", line 182
+    req.waypoints.extend(self.generate_curve_line_waypoints(subsidiary_point4,subsidiary_point3,np.pi,True,increase=10.)[::-1][1:)
+                                                                                                                                 ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+

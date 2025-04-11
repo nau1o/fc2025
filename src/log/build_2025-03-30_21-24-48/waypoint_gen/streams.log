@@ -1,0 +1,26 @@
+[0.713s] Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/waypoint_gen': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/waypoint_gen build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/install.log --single-version-externally-managed install_data
+[0.855s] running egg_info
+[0.867s] writing ../build/waypoint_gen/waypoint_gen.egg-info/PKG-INFO
+[0.868s] writing dependency_links to ../build/waypoint_gen/waypoint_gen.egg-info/dependency_links.txt
+[0.868s] writing entry points to ../build/waypoint_gen/waypoint_gen.egg-info/entry_points.txt
+[0.868s] writing requirements to ../build/waypoint_gen/waypoint_gen.egg-info/requires.txt
+[0.868s] writing top-level names to ../build/waypoint_gen/waypoint_gen.egg-info/top_level.txt
+[0.941s] reading manifest file '../build/waypoint_gen/waypoint_gen.egg-info/SOURCES.txt'
+[0.941s] adding license file 'LICENSE'
+[0.942s] writing manifest file '../build/waypoint_gen/waypoint_gen.egg-info/SOURCES.txt'
+[0.942s] running build
+[0.942s] running build_py
+[0.942s] copying waypoint_gen/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/build/lib/waypoint_gen
+[0.942s] copying waypoint_gen/node.py -> /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/build/lib/waypoint_gen
+[0.942s] running install
+[0.945s] running install_lib
+[0.954s] running install_data
+[0.954s] copying resource/waypoint_gen -> /home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/ament_index/resource_index/packages
+[0.954s] copying package.xml -> /home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen
+[0.954s] running install_egg_info
+[0.963s] removing '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib/python3.10/site-packages/waypoint_gen-0.0.0-py3.10.egg-info' (and everything under it)
+[0.963s] Copying ../build/waypoint_gen/waypoint_gen.egg-info to /home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib/python3.10/site-packages/waypoint_gen-0.0.0-py3.10.egg-info
+[0.964s] running install_scripts
+[0.986s] Installing node script to /home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib/waypoint_gen
+[0.986s] writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/install.log'
+[1.005s] Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/waypoint_gen' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/waypoint_gen build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/install.log --single-version-externally-managed install_data
