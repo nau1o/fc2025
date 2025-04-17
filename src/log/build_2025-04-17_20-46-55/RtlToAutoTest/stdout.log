@@ -1,0 +1,22 @@
+running egg_info
+writing ../build/RtlToAutoTest/RtlToAutoTest.egg-info/PKG-INFO
+writing dependency_links to ../build/RtlToAutoTest/RtlToAutoTest.egg-info/dependency_links.txt
+writing requirements to ../build/RtlToAutoTest/RtlToAutoTest.egg-info/requires.txt
+writing top-level names to ../build/RtlToAutoTest/RtlToAutoTest.egg-info/top_level.txt
+reading manifest file '../build/RtlToAutoTest/RtlToAutoTest.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../build/RtlToAutoTest/RtlToAutoTest.egg-info/SOURCES.txt'
+running build
+running build_py
+copying RtlToAutoTest/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/build/lib/RtlToAutoTest
+copying RtlToAutoTest/node.py -> /home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/build/lib/RtlToAutoTest
+running install
+running install_lib
+running install_data
+copying resource/RtlToAutoTest -> /home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/share/ament_index/resource_index/packages
+copying package.xml -> /home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/share/RtlToAutoTest
+running install_egg_info
+removing '/home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/lib/python3.10/site-packages/RtlToAutoTest-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../build/RtlToAutoTest/RtlToAutoTest.egg-info to /home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/lib/python3.10/site-packages/RtlToAutoTest-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/install.log'

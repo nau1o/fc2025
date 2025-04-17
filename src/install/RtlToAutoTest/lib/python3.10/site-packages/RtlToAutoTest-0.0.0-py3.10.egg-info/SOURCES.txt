@@ -1,0 +1,16 @@
+LICENSE
+package.xml
+setup.cfg
+setup.py
+../build/RtlToAutoTest/RtlToAutoTest.egg-info/PKG-INFO
+../build/RtlToAutoTest/RtlToAutoTest.egg-info/SOURCES.txt
+../build/RtlToAutoTest/RtlToAutoTest.egg-info/dependency_links.txt
+../build/RtlToAutoTest/RtlToAutoTest.egg-info/requires.txt
+../build/RtlToAutoTest/RtlToAutoTest.egg-info/top_level.txt
+../build/RtlToAutoTest/RtlToAutoTest.egg-info/zip-safe
+RtlToAutoTest/__init__.py
+RtlToAutoTest/node.py
+resource/RtlToAutoTest
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

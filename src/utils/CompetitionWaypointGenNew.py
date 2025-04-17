@@ -152,21 +152,20 @@ class CompetitionPoint_test(WayPointShit):
         req.waypoints.extend(self.generate_straight_line_waypoints(subsidiary_point4,ret2, increase=10.)[1:-1])
         return req
     '''
-    '''
+    
     def gen_rally_waypoint(self):
         """生成集结点"""
-        # 计算目标点2到目标点3的方向向量
+        # 计算目标点2到目标点3的方向向量z
         dir = np.array(self.tar2_enu)[:2] - np.array(self.tar3_enu)[:2]
         dir = dir / np.linalg.norm(dir)  # 单位化
-        
-        # 在目标点2基础上延伸100米
-        bot = np.array(self.tar2_enu)[:2] + dir * 100.
-        
-        # 计算垂直偏移
         vet = (np.array(self.tar3_enu)[:2] - np.array(self.tar2_enu)[:2])
         vet = vet / np.linalg.norm(vet)
-        vet = self.gen_rotate(-np.pi/2) @ vet  # 旋转-90度
-        bot = bot + vet * 65.  # 垂直偏移65米
+        vet = self.gen_rotate(np.pi/2) @ vet
+        
+        bot = self.center_point(self.tar1_enu, self.tar3_enu)[:2] + vet * 30. 
+        
+        # 计算垂直偏移
+        
         
         # 构建3D点并转换回GPS坐标
         rally_point = np.zeros(3)
@@ -175,7 +174,7 @@ class CompetitionPoint_test(WayPointShit):
         rally_point[2] = 20  # 高度设为20米
         
         return location.enu_to_geodetic(*rally_point, *self.home)
-    '''
+    
     def gen_drop_waypoint_v2(self, target: list, idx: int):
         h = target[2]
         def gen_rotate(x):
@@ -184,8 +183,8 @@ class CompetitionPoint_test(WayPointShit):
         req.waypoints.append(self.generate_waypoint(0., 0., 0.))
         center = np.array(geodetic_to_enu(*self.rally, *self.home))[:2]
         target_2 = np.array(target)[:2]
-        a = np.linalg.norm(target_2 - center)
-        
+        #a = np.linalg.norm(target_2 - center)
+        a = 70
         # 修改了盘旋半径
         if idx == 1 or idx == 2: b = 60.
         else: b = 70.

@@ -42,6 +42,7 @@ class TestNode(WayPointShit, ParameterShit, RallyPointShit):
         self.rally = None
         self.control_state = State.CLEAR_WP
         self.target = input("请输入目标点号(1,2,3): ")
+        self.state_Next = 1#测试用
 
     def timer_cb(self):
         
@@ -71,12 +72,16 @@ class TestNode(WayPointShit, ParameterShit, RallyPointShit):
                 self.control_state = State.CLEAR_RALLY
             elif self.waypoint_new_push_req == False and self.waypoint_push_success == False:
                 self.waypoint_new_push_req = True
+                self.waypoint_push(self.wp_det)
+                self.state_Next = 2
+                '''
                 if self.state.mode == "AUTO":
                     self.waypoint_push(self.wp_det)
                 elif self.state.mode == "RTL":
                     self.waypoint_push(self.wp_drop)
                     self.mode_switch("AUTO")
                     return
+                '''
         
         elif self.control_state == State.CLEAR_RALLY:
             if self.rallypoint_new_clear_req == False and self.rallypoint_clear_success == True:
@@ -94,18 +99,37 @@ class TestNode(WayPointShit, ParameterShit, RallyPointShit):
             elif self.rallypoint_new_push_req == False and self.rallypoint_push_success == False:
                 self.rallypoint_new_push_req = True
                 #tmp = DropWayPointGenA([38.55836766, 115.14099924, 0], [38.55957692, 115.14290759, 15], [38.55971915, 115.14313070, 15], [38.55986327, 115.14298034, 15], [38.55970967, 115.14275965, 15])
-                self.rallypoint_push(tmp.rally)
-        
+                self.rallypoint_push(self.rally)
+                self.state_Next = 3
+        if self.state_Next == 3:
+            if self.state.mode == "RTL":
+                self.waypoint_clear()
+                self.waypoint_push(self.wp_drop)
+                self.state_Next = 4
+        if self.state_Next == 4 and self.state.mode == "RTL":
+                self.switch_to_auto_cb()
+                
+               
         self.offboard_setpoint_counter += 1
         print(self.offboard_setpoint_counter)
-    def mode_switch(self, mode):
-        # 切换模式
-        self.mode = mode
-        self.mode_switch_req = mavros_msgs.srv.SetMode.Request()
-        self.mode_switch_req.custom_mode = mode
-        self.mode_switch_client.call_async(self.mode_switch_req)
-        self.get_logger().info(f"切换模式: {mode}")
-
+    def check_vector(vec1, vec2):
+        return vec1.dot(vec2) < 0
+    def switch_to_auto_cb(self):
+        self.get_logger().info("即将切换到自动模式...")
+        #tmp = geodetic_to_enu(self.final_drop_first_wp[0], self.final_drop_first_wp[1], self.final_drop_first_wp[2], *self.home)这里需要与lua结合使用
+        tmp = geodetic_to_enu(self.target2_gps[0], self.target2_gps[1], self.target2_gps[2], *self.home)
+    
+        dir = self.rotate.apply([1, 0, 0])[:2]
+        vec = (np.array(tmp) - np.array(self.local_position))[:2]
+        dir = dir / np.linalg.norm(dir)
+        vec = vec / np.linalg.norm(vec)
+        theta = np.arccos(np.dot(vec, dir) / (np.linalg.norm(vec) * np.linalg.norm(dir))) * 180. / np.pi
+        # TODO: tmp[0] 的正负需要根据情况进行修改! 
+        if theta <= 40. and theta >= 30.:
+            tmp = vec - dir
+            if not self.check_vector(dir, tmp): return 
+            self.set_mode("AUTO")#测试用：与原代码不同直接且切换到自动模式
+         
 def main(args=None):
     try:
         # 初始化 ROS2
