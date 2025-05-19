@@ -1,0 +1,24 @@
+[0.899s] Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/RtlToAutoTest': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/RtlToAutoTest build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/install.log --single-version-externally-managed install_data
+[1.043s] running egg_info
+[1.051s] writing ../build/RtlToAutoTest/RtlToAutoTest.egg-info/PKG-INFO
+[1.051s] writing dependency_links to ../build/RtlToAutoTest/RtlToAutoTest.egg-info/dependency_links.txt
+[1.051s] writing requirements to ../build/RtlToAutoTest/RtlToAutoTest.egg-info/requires.txt
+[1.051s] writing top-level names to ../build/RtlToAutoTest/RtlToAutoTest.egg-info/top_level.txt
+[1.125s] reading manifest file '../build/RtlToAutoTest/RtlToAutoTest.egg-info/SOURCES.txt'
+[1.126s] adding license file 'LICENSE'
+[1.127s] writing manifest file '../build/RtlToAutoTest/RtlToAutoTest.egg-info/SOURCES.txt'
+[1.127s] running build
+[1.127s] running build_py
+[1.127s] copying RtlToAutoTest/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/build/lib/RtlToAutoTest
+[1.127s] copying RtlToAutoTest/node.py -> /home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/build/lib/RtlToAutoTest
+[1.127s] running install
+[1.130s] running install_lib
+[1.138s] running install_data
+[1.138s] copying resource/RtlToAutoTest -> /home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/share/ament_index/resource_index/packages
+[1.138s] copying package.xml -> /home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/share/RtlToAutoTest
+[1.138s] running install_egg_info
+[1.147s] removing '/home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/lib/python3.10/site-packages/RtlToAutoTest-0.0.0-py3.10.egg-info' (and everything under it)
+[1.147s] Copying ../build/RtlToAutoTest/RtlToAutoTest.egg-info to /home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/lib/python3.10/site-packages/RtlToAutoTest-0.0.0-py3.10.egg-info
+[1.148s] running install_scripts
+[1.169s] writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/install.log'
+[1.188s] Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/RtlToAutoTest' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/RtlToAutoTest/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/RtlToAutoTest build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/RtlToAutoTest/install.log --single-version-externally-managed install_data

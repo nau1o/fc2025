@@ -51,9 +51,6 @@ class CompetitionPoint_test(WayPointShit):
 
         self.det_ret= self.gen_detect_waypoint()
         self.rally = self.gen_rally_waypoint()
-        self.tg1_ret = self.gen_drop_waypoint_v2(self.tar1_enu,1)
-        self.tg2_ret = self.gen_drop_waypoint_v2(self.tar2_enu,1)
-        self.tg3_ret = self.gen_drop_waypoint_v2(self.tar3_enu,1)
     def center_point(self, point1:list, point2:list):
         # 返回三维坐标的中点，包括高度
         return [
@@ -175,33 +172,3 @@ class CompetitionPoint_test(WayPointShit):
         
         return location.enu_to_geodetic(*rally_point, *self.home)
     
-    def gen_drop_waypoint_v2(self, target: list, idx: int):
-        h = target[2]
-        def gen_rotate(x):
-            return np.array([[np.cos(x), -np.sin(x)], [np.sin(x), np.cos(x)]])
-        req = mavros_msgs.srv.WaypointPush.Request()
-        req.waypoints.append(self.generate_waypoint(0., 0., 0.))
-        center = np.array(geodetic_to_enu(*self.rally, *self.home))[:2]
-        target_2 = np.array(target)[:2]
-        #a = np.linalg.norm(target_2 - center)
-        a = 70
-        # 修改了盘旋半径
-        if idx == 1 or idx == 2: b = 60.
-        else: b = 70.
-        theta = np.arcsin(b/a)
-        dir = ((center - target_2) / a)
-        dir = gen_rotate(-theta)@ dir
-        if idx == 1 or idx == 4: st = 60 * dir + target_2 
-        else: st = 80 * dir + target_2
-        tmp_st = np.zeros(3)
-        tmp_st[0] = st[0]
-        tmp_st[1] = st[1]
-        tmp_st[2] = target[2]
-        if idx == 1 or idx == 4: ed = -60 * dir + target_2 
-        else: ed = -40 * dir + target_2
-        tmp_ed = np.zeros(3)
-        tmp_ed[0] = ed[0]
-        tmp_ed[1] = ed[1]
-        tmp_ed[2] = target[2]
-        req.waypoints.extend(self.generate_straight_line_waypoints(tmp_st, tmp_ed, increase=25.))
-        return req
