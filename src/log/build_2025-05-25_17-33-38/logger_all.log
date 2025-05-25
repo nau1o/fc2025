@@ -1,0 +1,368 @@
+[0.088s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.088s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7be6e0d6d720>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7be6e0e6f190>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7be6e0e6f190>>)
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.118s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/naynn/Documents/fc2025/fc2025/src'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(node_test) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(node_test) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(node_test) by extension 'ignore_ament_install'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(node_test) by extensions ['colcon_pkg']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(node_test) by extension 'colcon_pkg'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(node_test) by extensions ['colcon_meta']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(node_test) by extension 'colcon_meta'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(node_test) by extensions ['ros']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(node_test) by extension 'ros'
+[0.131s] DEBUG:colcon.colcon_core.package_identification:Package 'node_test' with type 'ros.ament_python' and name 'node_test'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(pose) by extensions ['ignore', 'ignore_ament_install']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(pose) by extension 'ignore'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(pose) by extension 'ignore_ament_install'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(pose) by extensions ['colcon_pkg']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(pose) by extension 'colcon_pkg'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(pose) by extensions ['colcon_meta']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(pose) by extension 'colcon_meta'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(pose) by extensions ['ros']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(pose) by extension 'ros'
+[0.132s] DEBUG:colcon.colcon_core.package_identification:Package 'pose' with type 'ros.ament_python' and name 'pose'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extensions ['ignore', 'ignore_ament_install']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extension 'ignore'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extension 'ignore_ament_install'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extensions ['colcon_pkg']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extension 'colcon_pkg'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extensions ['colcon_meta']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extension 'colcon_meta'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extensions ['ros']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extension 'ros'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extensions ['cmake', 'python']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extension 'cmake'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extension 'python'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extensions ['python_setup_py']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils) by extension 'python_setup_py'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extension 'ignore'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extension 'ignore_ament_install'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extensions ['colcon_pkg']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extension 'colcon_pkg'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extensions ['colcon_meta']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extension 'colcon_meta'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extensions ['ros']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extension 'ros'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extensions ['cmake', 'python']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extension 'cmake'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extension 'python'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extensions ['python_setup_py']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/__pycache__) by extension 'python_setup_py'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extensions ['ignore', 'ignore_ament_install']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extension 'ignore'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extension 'ignore_ament_install'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extension 'ros'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extensions ['cmake', 'python']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extension 'cmake'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extension 'python'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extensions ['python_setup_py']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(utils/test) by extension 'python_setup_py'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(vision) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(vision) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(vision) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(vision) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(vision) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(vision) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(vision) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(vision) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(vision) by extension 'ros'
+[0.133s] DEBUG:colcon.colcon_core.package_identification:Package 'vision' with type 'ros.ament_python' and name 'vision'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(visualize) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(visualize) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(visualize) by extension 'ignore_ament_install'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(visualize) by extensions ['colcon_pkg']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(visualize) by extension 'colcon_pkg'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(visualize) by extensions ['colcon_meta']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(visualize) by extension 'colcon_meta'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(visualize) by extensions ['ros']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(visualize) by extension 'ros'
+[0.134s] DEBUG:colcon.colcon_core.package_identification:Package 'visualize' with type 'ros.ament_python' and name 'visualize'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extension 'ignore'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extension 'ignore_ament_install'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extensions ['colcon_pkg']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extension 'colcon_pkg'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extensions ['colcon_meta']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extensions ['ros']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extension 'ros'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extensions ['cmake', 'python']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extension 'cmake'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extension 'python'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extensions ['python_setup_py']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint) by extension 'python_setup_py'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint_gen) by extensions ['ignore', 'ignore_ament_install']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint_gen) by extension 'ignore'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint_gen) by extension 'ignore_ament_install'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint_gen) by extensions ['colcon_pkg']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint_gen) by extension 'colcon_pkg'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint_gen) by extensions ['colcon_meta']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint_gen) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint_gen) by extensions ['ros']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(waypoint_gen) by extension 'ros'
+[0.136s] DEBUG:colcon.colcon_core.package_identification:Package 'waypoint_gen' with type 'ros.ament_python' and name 'waypoint_gen'
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.150s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.150s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.152s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 298 installed packages in /opt/ros/humble
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.173s] Level 5:colcon.colcon_core.verb:set package 'node_test' build argument 'cmake_args' from command line to 'None'
+[0.173s] Level 5:colcon.colcon_core.verb:set package 'node_test' build argument 'cmake_target' from command line to 'None'
+[0.173s] Level 5:colcon.colcon_core.verb:set package 'node_test' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.173s] Level 5:colcon.colcon_core.verb:set package 'node_test' build argument 'cmake_clean_cache' from command line to 'False'
+[0.173s] Level 5:colcon.colcon_core.verb:set package 'node_test' build argument 'cmake_clean_first' from command line to 'False'
+[0.173s] Level 5:colcon.colcon_core.verb:set package 'node_test' build argument 'cmake_force_configure' from command line to 'False'
+[0.173s] Level 5:colcon.colcon_core.verb:set package 'node_test' build argument 'ament_cmake_args' from command line to 'None'
+[0.173s] Level 5:colcon.colcon_core.verb:set package 'node_test' build argument 'catkin_cmake_args' from command line to 'None'
+[0.173s] Level 5:colcon.colcon_core.verb:set package 'node_test' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.173s] DEBUG:colcon.colcon_core.verb:Building package 'node_test' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/naynn/Documents/fc2025/fc2025/src/build/node_test', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/naynn/Documents/fc2025/fc2025/src/install/node_test', 'merge_install': False, 'path': '/home/naynn/Documents/fc2025/fc2025/src/node_test', 'symlink_install': False, 'test_result_base': None}
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'pose' build argument 'cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'pose' build argument 'cmake_target' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'pose' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'pose' build argument 'cmake_clean_cache' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'pose' build argument 'cmake_clean_first' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'pose' build argument 'cmake_force_configure' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'pose' build argument 'ament_cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'pose' build argument 'catkin_cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'pose' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.174s] DEBUG:colcon.colcon_core.verb:Building package 'pose' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/naynn/Documents/fc2025/fc2025/src/build/pose', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/naynn/Documents/fc2025/fc2025/src/install/pose', 'merge_install': False, 'path': '/home/naynn/Documents/fc2025/fc2025/src/pose', 'symlink_install': False, 'test_result_base': None}
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_target' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_clean_cache' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_clean_first' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'cmake_force_configure' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'ament_cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'catkin_cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'vision' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.174s] DEBUG:colcon.colcon_core.verb:Building package 'vision' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/naynn/Documents/fc2025/fc2025/src/build/vision', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/naynn/Documents/fc2025/fc2025/src/install/vision', 'merge_install': False, 'path': '/home/naynn/Documents/fc2025/fc2025/src/vision', 'symlink_install': False, 'test_result_base': None}
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'visualize' build argument 'cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'visualize' build argument 'cmake_target' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'visualize' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'visualize' build argument 'cmake_clean_cache' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'visualize' build argument 'cmake_clean_first' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'visualize' build argument 'cmake_force_configure' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'visualize' build argument 'ament_cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'visualize' build argument 'catkin_cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'visualize' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.174s] DEBUG:colcon.colcon_core.verb:Building package 'visualize' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/naynn/Documents/fc2025/fc2025/src/build/visualize', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/naynn/Documents/fc2025/fc2025/src/install/visualize', 'merge_install': False, 'path': '/home/naynn/Documents/fc2025/fc2025/src/visualize', 'symlink_install': False, 'test_result_base': None}
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'waypoint_gen' build argument 'cmake_args' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'waypoint_gen' build argument 'cmake_target' from command line to 'None'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'waypoint_gen' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'waypoint_gen' build argument 'cmake_clean_cache' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'waypoint_gen' build argument 'cmake_clean_first' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'waypoint_gen' build argument 'cmake_force_configure' from command line to 'False'
+[0.174s] Level 5:colcon.colcon_core.verb:set package 'waypoint_gen' build argument 'ament_cmake_args' from command line to 'None'
+[0.175s] Level 5:colcon.colcon_core.verb:set package 'waypoint_gen' build argument 'catkin_cmake_args' from command line to 'None'
+[0.175s] Level 5:colcon.colcon_core.verb:set package 'waypoint_gen' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.175s] DEBUG:colcon.colcon_core.verb:Building package 'waypoint_gen' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen', 'merge_install': False, 'path': '/home/naynn/Documents/fc2025/fc2025/src/waypoint_gen', 'symlink_install': False, 'test_result_base': None}
+[0.175s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.175s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.176s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/naynn/Documents/fc2025/fc2025/src/node_test' with build type 'ament_python'
+[0.176s] Level 1:colcon.colcon_core.shell:create_environment_hook('node_test', 'ament_prefix_path')
+[0.177s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.177s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/hook/ament_prefix_path.ps1'
+[0.178s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/hook/ament_prefix_path.dsv'
+[0.178s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/hook/ament_prefix_path.sh'
+[0.179s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.179s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.180s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/naynn/Documents/fc2025/fc2025/src/pose' with build type 'ament_python'
+[0.181s] Level 1:colcon.colcon_core.shell:create_environment_hook('pose', 'ament_prefix_path')
+[0.181s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/hook/ament_prefix_path.ps1'
+[0.181s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/hook/ament_prefix_path.dsv'
+[0.181s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/hook/ament_prefix_path.sh'
+[0.181s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.182s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.183s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/naynn/Documents/fc2025/fc2025/src/vision' with build type 'ament_python'
+[0.183s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision', 'ament_prefix_path')
+[0.183s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/hook/ament_prefix_path.ps1'
+[0.184s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/hook/ament_prefix_path.dsv'
+[0.184s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/hook/ament_prefix_path.sh'
+[0.184s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.184s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.186s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/naynn/Documents/fc2025/fc2025/src/visualize' with build type 'ament_python'
+[0.186s] Level 1:colcon.colcon_core.shell:create_environment_hook('visualize', 'ament_prefix_path')
+[0.186s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/hook/ament_prefix_path.ps1'
+[0.186s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/hook/ament_prefix_path.dsv'
+[0.186s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/hook/ament_prefix_path.sh'
+[0.187s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.187s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.188s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/naynn/Documents/fc2025/fc2025/src/waypoint_gen' with build type 'ament_python'
+[0.188s] Level 1:colcon.colcon_core.shell:create_environment_hook('waypoint_gen', 'ament_prefix_path')
+[0.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/hook/ament_prefix_path.ps1'
+[0.189s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/hook/ament_prefix_path.dsv'
+[0.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/hook/ament_prefix_path.sh'
+[0.190s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.190s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.320s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/naynn/Documents/fc2025/fc2025/src/node_test'
+[0.320s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.320s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.443s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/naynn/Documents/fc2025/fc2025/src/pose'
+[0.443s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.443s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.564s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/naynn/Documents/fc2025/fc2025/src/vision'
+[0.565s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.565s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.691s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/naynn/Documents/fc2025/fc2025/src/visualize'
+[0.691s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.691s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.814s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/naynn/Documents/fc2025/fc2025/src/waypoint_gen'
+[0.814s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.815s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.273s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/visualize': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/visualize/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/visualize build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/visualize/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/visualize/install.log --single-version-externally-managed install_data
+[1.274s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/waypoint_gen': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/waypoint_gen build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/install.log --single-version-externally-managed install_data
+[1.276s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/node_test': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/node_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/node_test build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log --single-version-externally-managed install_data
+[1.278s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/vision': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/vision build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/vision/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/vision/install.log --single-version-externally-managed install_data
+[1.281s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/pose': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/pose/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pose build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/pose/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/pose/install.log --single-version-externally-managed install_data
+[1.576s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/vision' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/vision build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/vision/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/vision/install.log --single-version-externally-managed install_data
+[1.579s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/vision' for CMake module files
+[1.579s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/vision' for CMake config files
+[1.580s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/vision/lib'
+[1.580s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/vision/bin'
+[1.580s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/vision/lib/pkgconfig/vision.pc'
+[1.580s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/vision/lib/python3.10/site-packages'
+[1.580s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision', 'pythonpath')
+[1.580s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/hook/pythonpath.ps1'
+[1.581s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/hook/pythonpath.dsv'
+[1.581s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/hook/pythonpath.sh'
+[1.581s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/vision/bin'
+[1.581s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(vision)
+[1.581s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/package.ps1'
+[1.582s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/package.dsv'
+[1.582s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/package.sh'
+[1.583s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/package.bash'
+[1.583s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision/package.zsh'
+[1.584s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/naynn/Documents/fc2025/fc2025/src/install/vision/share/colcon-core/packages/vision)
+[1.585s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/visualize' for CMake module files
+[1.585s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/visualize' for CMake config files
+[1.586s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/visualize' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/visualize/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/visualize build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/visualize/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/visualize/install.log --single-version-externally-managed install_data
+[1.586s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib'
+[1.586s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/bin'
+[1.586s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/pkgconfig/visualize.pc'
+[1.586s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/python3.10/site-packages'
+[1.586s] Level 1:colcon.colcon_core.shell:create_environment_hook('visualize', 'pythonpath')
+[1.586s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/hook/pythonpath.ps1'
+[1.587s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/hook/pythonpath.dsv'
+[1.587s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/hook/pythonpath.sh'
+[1.587s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/bin'
+[1.587s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(visualize)
+[1.588s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/package.ps1'
+[1.588s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/package.dsv'
+[1.588s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/package.sh'
+[1.588s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/package.bash'
+[1.589s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/package.zsh'
+[1.589s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/colcon-core/packages/visualize)
+[1.589s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen' for CMake module files
+[1.590s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen' for CMake config files
+[1.590s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/waypoint_gen' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/waypoint_gen build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/waypoint_gen/install.log --single-version-externally-managed install_data
+[1.591s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib'
+[1.591s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/bin'
+[1.591s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib/pkgconfig/waypoint_gen.pc'
+[1.591s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/lib/python3.10/site-packages'
+[1.591s] Level 1:colcon.colcon_core.shell:create_environment_hook('waypoint_gen', 'pythonpath')
+[1.591s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/hook/pythonpath.ps1'
+[1.591s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/hook/pythonpath.dsv'
+[1.592s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/hook/pythonpath.sh'
+[1.592s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/bin'
+[1.592s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(waypoint_gen)
+[1.592s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/package.ps1'
+[1.593s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/package.dsv'
+[1.593s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/package.sh'
+[1.593s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/package.bash'
+[1.593s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/waypoint_gen/package.zsh'
+[1.593s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/naynn/Documents/fc2025/fc2025/src/install/waypoint_gen/share/colcon-core/packages/waypoint_gen)
+[1.597s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/node_test' for CMake module files
+[1.598s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/node_test' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/node_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/node_test build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log --single-version-externally-managed install_data
+[1.598s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/node_test' for CMake config files
+[1.599s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib'
+[1.599s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/bin'
+[1.599s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/pkgconfig/node_test.pc'
+[1.599s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages'
+[1.599s] Level 1:colcon.colcon_core.shell:create_environment_hook('node_test', 'pythonpath')
+[1.599s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/hook/pythonpath.ps1'
+[1.599s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/hook/pythonpath.dsv'
+[1.600s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/hook/pythonpath.sh'
+[1.600s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/bin'
+[1.600s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(node_test)
+[1.600s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/package.ps1'
+[1.600s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/package.dsv'
+[1.601s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/package.sh'
+[1.601s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/package.bash'
+[1.601s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test/package.zsh'
+[1.601s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/colcon-core/packages/node_test)
+[1.602s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/pose' for CMake module files
+[1.602s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/pose' for CMake config files
+[1.602s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/pose' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/pose/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pose build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/pose/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/pose/install.log --single-version-externally-managed install_data
+[1.603s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/pose/lib'
+[1.603s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/pose/bin'
+[1.603s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/pkgconfig/pose.pc'
+[1.603s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/python3.10/site-packages'
+[1.603s] Level 1:colcon.colcon_core.shell:create_environment_hook('pose', 'pythonpath')
+[1.603s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/hook/pythonpath.ps1'
+[1.604s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/hook/pythonpath.dsv'
+[1.604s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/hook/pythonpath.sh'
+[1.604s] Level 1:colcon.colcon_core.environment:checking '/home/naynn/Documents/fc2025/fc2025/src/install/pose/bin'
+[1.604s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pose)
+[1.604s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/package.ps1'
+[1.605s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/package.dsv'
+[1.605s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/package.sh'
+[1.605s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/package.bash'
+[1.605s] INFO:colcon.colcon_core.shell:Creating package script '/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose/package.zsh'
+[1.605s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/naynn/Documents/fc2025/fc2025/src/install/pose/share/colcon-core/packages/pose)
+[1.605s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.606s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.606s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.606s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.609s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.610s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.610s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.617s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.617s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/naynn/Documents/fc2025/fc2025/src/install/local_setup.ps1'
+[1.618s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/naynn/Documents/fc2025/fc2025/src/install/_local_setup_util_ps1.py'
+[1.619s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/naynn/Documents/fc2025/fc2025/src/install/setup.ps1'
+[1.619s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/naynn/Documents/fc2025/fc2025/src/install/local_setup.sh'
+[1.620s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/naynn/Documents/fc2025/fc2025/src/install/_local_setup_util_sh.py'
+[1.620s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/naynn/Documents/fc2025/fc2025/src/install/setup.sh'
+[1.621s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/naynn/Documents/fc2025/fc2025/src/install/local_setup.bash'
+[1.621s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/naynn/Documents/fc2025/fc2025/src/install/setup.bash'
+[1.622s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/naynn/Documents/fc2025/fc2025/src/install/local_setup.zsh'
+[1.622s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/naynn/Documents/fc2025/fc2025/src/install/setup.zsh'

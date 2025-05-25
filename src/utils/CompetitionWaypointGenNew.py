@@ -40,17 +40,16 @@ from utils.classes import BaseNode,CallBackNode,State,WayPointShit,ParameterShit
 from utils import location
 
 class CompetitionPoint_test(WayPointShit):
-    def __init__(self,home,tar1_gps,tar2_gps,tar3_gps):
-        self.home = home
-        self.tar1_gps = tar1_gps
-        self.tar2_gps = tar2_gps
-        self.tar3_gps = tar3_gps
-        self.tar1_enu = location.geodetic_to_enu(tar1_gps[0],tar1_gps[1],tar1_gps[2],home[0],home[1],home[2])
-        self.tar2_enu = location.geodetic_to_enu(tar2_gps[0],tar2_gps[1],tar2_gps[2],home[0],home[1],home[2])
-        self.tar3_enu = location.geodetic_to_enu(tar3_gps[0],tar3_gps[1],tar3_gps[2],home[0],home[1],home[2])
-
-        self.det_ret= self.gen_detect_waypoint()
-        self.rally = self.gen_rally_waypoint()
+    def __init__(self):
+        self.home = [22.5905424,113.9749189,0]
+        self.tar1_gps = [22.59060325,113.97553417,50]
+        self.tar2_gps = [22.59042208,113.97542204,50]
+        self.tar3_gps = [22.59041920,113.97564942 ,50]
+        self.tar1_enu = location.geodetic_to_enu(self.tar1_gps[0],self.tar1_gps[1],self.tar1_gps[2],self.home[0],self.home[1],self.home[2])
+        self.tar2_enu = location.geodetic_to_enu(self.tar2_gps[0],self.tar2_gps[1],self.tar2_gps[2],self.home[0],self.home[1],self.home[2])
+        self.tar3_enu = location.geodetic_to_enu(self.tar3_gps[0],self.tar3_gps[1],self.tar3_gps[2],self.home[0],self.home[1],self.home[2])
+        self.det_ret= self.gen_detect_waypoint2()
+        self.rally = self.gen_rally_waypoint2()
     def center_point(self, point1:list, point2:list):
         # 返回三维坐标的中点，包括高度
         return [
@@ -93,16 +92,57 @@ class CompetitionPoint_test(WayPointShit):
         
         req = mavros_msgs.srv.WaypointPush.Request()
         req.waypoints.append(self.generate_waypoint(0., 0., 0.))
-        req.waypoints.extend(self.generate_straight_line_waypoints(st,subsidiary_point1, increase=10.)[:-1])
-        req.waypoints.extend(self.generate_curve_line_waypoints(subsidiary_point1,subsidiary_point2,np.pi,False,increase=10.)[1:])
+        req.waypoints.extend(self.generate_straight_line_waypoints(st,subsidiary_point1, increase=20.)[:-1])
+        req.waypoints.extend(self.generate_curve_line_waypoints(subsidiary_point1,subsidiary_point2,np.pi,False,increase=20.)[1:])
         #req.waypoints.extend(self.generate_straight_line_waypoints(ret1, subsidiary_point1, increase=10.)[1:-1])
         #req.waypoints.extend(self.generate_curve_line_waypoints(subsidiary_point2,subsidiary_point3,np.pi,False,increase=10.)[2:-1])
-        req.waypoints.extend(self.generate_straight_line_waypoints(subsidiary_point2,subsidiary_point3, increase=10.)[:-1])
+        req.waypoints.extend(self.generate_straight_line_waypoints(subsidiary_point2,subsidiary_point3, increase=20.)[:-1])
         #req.waypoints.extend(self.generate_straight_line_waypoints(subsidiary_point1,subsidiary_point2, increase=10.)[1:-1])
         #req.waypoints.extend(self.generate_straight_line_waypoints(subsidiary_point2,ed, increase=25.)[1:-1])
-        req.waypoints.extend(self.generate_curve_line_waypoints(subsidiary_point3,ret2,np.pi,False,increase=10.)[1:-1])
+        req.waypoints.extend(self.generate_curve_line_waypoints(subsidiary_point3,ret2,np.pi,False,increase=20.)[1:-1])
         return req
-    
+    def gen_detect_waypoint2(self):
+        # 获取目标点的高度
+        height = self.tar1_enu[2]  # 使用目标点1的高度作为基准
+        
+        # 计算中点
+        ret1 = self.center_point(self.tar1_enu, self.tar3_enu)
+        ret2 = self.center_point(self.tar1_enu, self.tar2_enu)
+        
+        # 转换为numpy数组，只取xy平面坐标
+        tar1_array = np.array(self.tar1_enu[:2])
+        tar2_array = np.array(self.tar2_enu[:2])
+        tar3_array = np.array(self.tar3_enu[:2])
+        
+        # 计算单位向量（2D）
+        v1 = (tar2_array - tar3_array) / np.linalg.norm(tar2_array - tar3_array)
+        v2 = (tar2_array - tar1_array) / np.linalg.norm(tar2_array - tar1_array)
+        
+        dist12 = np.linalg.norm(tar2_array - tar1_array)
+        dist32 = np.linalg.norm(tar3_array - tar2_array)
+        # 计算垂直向量（2D）
+        vertical_v1= self.gen_rotate(np.pi/2) @ v1
+        
+        # 计算新点时加入高度分量
+        st = [*((np.array(ret1[:2]) + 80 * vertical_v1).tolist()), height]
+        ed = [*((np.array(ret2[:2]) -30 * v2).tolist()), height]
+        subsidiary_point1 = [*((np.array(ret1[:2]) - 25*vertical_v1).tolist()), height]
+        subsidiary_point2 = [*((np.array(ret1[:2]) + 50*v1 - 25*vertical_v1).tolist()), height]
+        subsidiary_point3 = [*((np.array(ret2[:2]) +40*v1+50*vertical_v1).tolist()), height]
+        subsidiary_point4 = [*((np.array(ret2[:2]) + 50*vertical_v1).tolist()), height]
+        
+        req = mavros_msgs.srv.WaypointPush.Request()
+        req.waypoints.append(self.generate_waypoint(0., 0., 0.))
+        req.waypoints.extend(self.generate_straight_line_waypoints(st,subsidiary_point1, increase=20.)[:-1])
+        req.waypoints.extend(self.generate_curve_line_waypoints(subsidiary_point1,subsidiary_point2,np.pi,False,increase=20.)[1:])
+        #req.waypoints.extend(self.generate_straight_line_waypoints(ret1, subsidiary_point1, increase=10.)[1:-1])
+        #req.waypoints.extend(self.generate_curve_line_waypoints(subsidiary_point2,subsidiary_point3,np.pi,False,increase=10.)[2:-1])
+        req.waypoints.extend(self.generate_straight_line_waypoints(subsidiary_point2,subsidiary_point3, increase=20.)[:-1])
+        #req.waypoints.extend(self.generate_straight_line_waypoints(subsidiary_point1,subsidiary_point2, increase=10.)[1:-1])
+        #req.waypoints.extend(self.generate_straight_line_waypoints(subsidiary_point2,ed, increase=25.)[1:-1])
+        req.waypoints.extend(self.generate_curve_line_waypoints(subsidiary_point3,subsidiary_point4,np.pi,False,increase=20.)[1:-1])
+        req.waypoints.extend(self.generate_straight_line_waypoints(subsidiary_point4,ret2,increase=20.)[1:-1])
+        return req
     '''
     #侦察路线2
     def gen_detect_waypoint(self):
@@ -159,7 +199,7 @@ class CompetitionPoint_test(WayPointShit):
         vet = vet / np.linalg.norm(vet)
         vet = self.gen_rotate(np.pi/2) @ vet
         
-        bot = self.center_point(self.tar1_enu, self.tar3_enu)[:2] + vet * 30. 
+        bot = self.center_point(self.tar1_enu, self.tar3_enu)[:2] + vet * 60. 
         
         # 计算垂直偏移
         
@@ -170,5 +210,25 @@ class CompetitionPoint_test(WayPointShit):
         rally_point[1] = bot[1]
         rally_point[2] = 20  # 高度设为20米
         
+        return location.enu_to_geodetic(*rally_point, *self.home)
+    def gen_rally_waypoint2(self):
+        """生成集结点"""
+        # 计算目标点2到目标点3的方向向量z
+        dir = np.array(self.tar2_enu)[:2] - np.array(self.tar3_enu)[:2]
+        dir = dir / np.linalg.norm(dir)  # 单位化
+        vet = (np.array(self.tar3_enu)[:2] - np.array(self.tar2_enu)[:2])
+        vet = vet / np.linalg.norm(vet)
+        vet = self.gen_rotate(np.pi/2) @ vet
+        
+        bot = self.center_point(self.tar1_enu, self.tar2_enu)[:2] + vet * 30. 
+        
+        # 计算垂直偏移
+        
+        
+        # 构建3D点并转换回GPS坐标
+        rally_point = np.zeros(3)
+        rally_point[0] = bot[0]
+        rally_point[1] = bot[1]
+        rally_point[2] = 20  # 高度设为20米
         return location.enu_to_geodetic(*rally_point, *self.home)
     
