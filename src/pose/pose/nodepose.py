@@ -55,8 +55,6 @@ class SwitchToAutoNode(WayPointShit, ParameterShit, RallyPointShit, TakeOffShit)
         self.detect_wp_num = 26
         self.final_target = None
         self.stage = -1
-        #p1= rclpy.Parameter("TARGET_NUM",value=-1)
-        #p2= rclpy.Parameter("TARGET_GET",value=-1)
         # 关于集结点盘旋的判断
         tmp = CompetitionPoint_test()
         self.rally_point_gps = tmp.rally
