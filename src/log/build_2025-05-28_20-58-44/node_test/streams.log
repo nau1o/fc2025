@@ -1,0 +1,26 @@
+[1.107s] Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/node_test': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/node_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/node_test build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log --single-version-externally-managed install_data
+[1.254s] running egg_info
+[1.262s] writing ../build/node_test/node_test.egg-info/PKG-INFO
+[1.263s] writing dependency_links to ../build/node_test/node_test.egg-info/dependency_links.txt
+[1.263s] writing entry points to ../build/node_test/node_test.egg-info/entry_points.txt
+[1.263s] writing requirements to ../build/node_test/node_test.egg-info/requires.txt
+[1.263s] writing top-level names to ../build/node_test/node_test.egg-info/top_level.txt
+[1.342s] reading manifest file '../build/node_test/node_test.egg-info/SOURCES.txt'
+[1.342s] adding license file 'LICENSE'
+[1.343s] writing manifest file '../build/node_test/node_test.egg-info/SOURCES.txt'
+[1.343s] running build
+[1.343s] running build_py
+[1.344s] copying node_test/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test
+[1.344s] copying node_test/node_test.py -> /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build/lib/node_test
+[1.345s] running install
+[1.346s] running install_lib
+[1.356s] running install_data
+[1.356s] copying resource/node_test -> /home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/ament_index/resource_index/packages
+[1.356s] copying package.xml -> /home/naynn/Documents/fc2025/fc2025/src/install/node_test/share/node_test
+[1.356s] running install_egg_info
+[1.365s] removing '/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test-0.0.0-py3.10.egg-info' (and everything under it)
+[1.366s] Copying ../build/node_test/node_test.egg-info to /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages/node_test-0.0.0-py3.10.egg-info
+[1.366s] running install_scripts
+[1.389s] Installing node script to /home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/node_test
+[1.389s] writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log'
+[1.422s] Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/node_test' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/node_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/node_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/node_test build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/node_test/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/node_test/install.log --single-version-externally-managed install_data
