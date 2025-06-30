@@ -25,9 +25,9 @@ from utils.location import geodetic_to_enu
 from utils.classes import BaseNode,CallBackNode,State,WayPointShit,ParameterShit,RallyPointShit
 from utils import location
 from utils.CompetitionWaypointGenNew import CompetitionPoint_test
-class TestNode(WayPointShit, ParameterShit, RallyPointShit):
+class TestNode(WayPointShit, ParameterShit, RallyPointShit,BaseNode):
     def __init__(self):
-        BaseNode.__init__(self)
+        BaseNode.__init__(self,node_name="test_node")
         self.new_mission = True
         self.home = [22.5905424,113.9749189,0]
         self.offboard_setpoint_counter = 0
@@ -88,6 +88,7 @@ class TestNode(WayPointShit, ParameterShit, RallyPointShit):
                 self.rallypoint_new_push_req = True
                 #tmp = DropWayPointGenA([38.55836766, 115.14099924, 0], [38.55957692, 115.14290759, 15], [38.55971915, 115.14313070, 15], [38.55986327, 115.14298034, 15], [38.55970967, 115.14275965, 15])
                 self.rallypoint_push(self.rally)
+                print(self.rally)
                 
                 self.state_Next = 3
         if self.state_Next == 3:

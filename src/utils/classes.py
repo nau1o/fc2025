@@ -40,8 +40,8 @@ class State(Enum):
     CLEAR_WP = 6
 
 class BaseNode(Node):
-    def __init__(self, logger_set = True):
-        Node.__init__(self, "mian_node")
+    def __init__(self, node_name="main_node",logger_set = True):
+        Node.__init__(self, node_name)
         self.logger_set = logger_set
         
         # 订阅各种服务和话题
@@ -171,7 +171,7 @@ class BaseNode(Node):
         self.parameters_get_success = False
         self.parameters_get_ret = None
 
-class CallBackNode(BaseNode):
+class CallBackNode:
     def parameters_get_cb(self, response):
         result = response.result()
         self.parameters_new_get_req = False

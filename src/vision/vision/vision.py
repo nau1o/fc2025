@@ -23,7 +23,7 @@ class vision_test(Node):
 
     def timer_cb(self):
         msg = std_msgs.msg.UInt32()
-        msg.data = 100
+        msg.data = 1
         self.target_pub.publish(msg)
         print("publish: ", msg.data)
     def target_num_cb(self, msg):
