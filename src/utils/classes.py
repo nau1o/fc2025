@@ -171,7 +171,7 @@ class BaseNode(Node):
         self.parameters_get_success = False
         self.parameters_get_ret = None
 
-class CallBackNode:
+class CallBackNode(BaseNode):
     def parameters_get_cb(self, response):
         result = response.result()
         self.parameters_new_get_req = False
@@ -183,8 +183,9 @@ class CallBackNode:
                 return
         self.parameters_get_success = True
         if self.logger_set: self.get_logger().info("参数获取成功")
+        print("获取到参数: ", result.values)
         self.parameters_get_ret = result.values
-        
+        print(self.parameters_get_ret)
     def waypoint_clear_cb(self, response):
         if response.result().success:
             if self.logger_set: self.get_logger().info("航点清空成功")
@@ -517,7 +518,15 @@ class WayPointShit(CallBackNode):
         self.waypoint_clear_client.call_async(req).add_done_callback(
             self.waypoint_clear_cb
         )
-
+    def set_mode(self, mode):
+        while not self.set_mode_client.wait_for_service(1.0):
+            if self.logger_set: self.get_logger().info("等待set_mode服务上线...")
+        if self.logger_set: self.get_logger().info("set_mode服务已上线即将改为 %s 模式..." % mode)
+        request = mavros_msgs.srv.SetMode.Request()
+        request.base_mode = 0
+        request.custom_mode = mode
+        # print(request, request._custom_mode)
+        self.set_mode_client.call_async(request).add_done_callback(self.set_mode_cb)
 
 class RallyPointShit(CallBackNode):
     def rallypoint_pull(self):
@@ -630,15 +639,6 @@ class TakeOffShit(CallBackNode):
         request.value = True
         self.arming_client.call_async(request).add_done_callback(self.arm_cb)
 
-    def set_mode(self, mode):
-        while not self.set_mode_client.wait_for_service(1.0):
-            if self.logger_set: self.get_logger().info("等待set_mode服务上线...")
-        if self.logger_set: self.get_logger().info("set_mode服务已上线即将改为 %s 模式..." % mode)
-        request = mavros_msgs.srv.SetMode.Request()
-        request.base_mode = 0
-        request.custom_mode = mode
-        # print(request, request._custom_mode)
-        self.set_mode_client.call_async(request).add_done_callback(self.set_mode_cb)
 
     def takeoff_process(self, position: list) -> None:
         while not self.waypoint_push_client.wait_for_service(1.0):

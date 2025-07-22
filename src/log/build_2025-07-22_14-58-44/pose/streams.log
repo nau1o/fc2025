@@ -1,0 +1,28 @@
+[1.033s] Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/pose': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/pose/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pose build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/pose/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/pose/install.log --single-version-externally-managed install_data
+[1.186s] running egg_info
+[1.196s] writing ../build/pose/pose.egg-info/PKG-INFO
+[1.196s] writing dependency_links to ../build/pose/pose.egg-info/dependency_links.txt
+[1.196s] writing entry points to ../build/pose/pose.egg-info/entry_points.txt
+[1.197s] writing requirements to ../build/pose/pose.egg-info/requires.txt
+[1.197s] writing top-level names to ../build/pose/pose.egg-info/top_level.txt
+[1.278s] reading manifest file '../build/pose/pose.egg-info/SOURCES.txt'
+[1.279s] adding license file 'LICENSE'
+[1.279s] writing manifest file '../build/pose/pose.egg-info/SOURCES.txt'
+[1.279s] running build
+[1.280s] running build_py
+[1.280s] copying pose/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/build/pose/build/lib/pose
+[1.280s] copying pose/nodepose.py -> /home/naynn/Documents/fc2025/fc2025/src/build/pose/build/lib/pose
+[1.280s] running install
+[1.283s] running install_lib
+[1.292s] copying /home/naynn/Documents/fc2025/fc2025/src/build/pose/build/lib/pose/nodepose.py -> /home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/python3.10/site-packages/pose
+[1.293s] byte-compiling /home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/python3.10/site-packages/pose/nodepose.py to nodepose.cpython-310.pyc
+[1.293s] running install_data
+[1.294s] copying resource/pose -> /home/naynn/Documents/fc2025/fc2025/src/install/pose/share/ament_index/resource_index/packages
+[1.294s] copying package.xml -> /home/naynn/Documents/fc2025/fc2025/src/install/pose/share/pose
+[1.294s] running install_egg_info
+[1.305s] removing '/home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/python3.10/site-packages/pose-0.0.0-py3.10.egg-info' (and everything under it)
+[1.306s] Copying ../build/pose/pose.egg-info to /home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/python3.10/site-packages/pose-0.0.0-py3.10.egg-info
+[1.306s] running install_scripts
+[1.331s] Installing node script to /home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/pose
+[1.331s] writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/src/build/pose/install.log'
+[1.358s] Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/pose' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/pose/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/pose/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pose build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/pose/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/pose/install.log --single-version-externally-managed install_data

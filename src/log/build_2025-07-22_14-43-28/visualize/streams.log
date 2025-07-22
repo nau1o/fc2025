@@ -1,0 +1,29 @@
+[1.046s] Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/visualize': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/visualize/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/visualize build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/visualize/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/visualize/install.log --single-version-externally-managed install_data
+[1.204s] running egg_info
+[1.216s] writing ../build/visualize/visualize.egg-info/PKG-INFO
+[1.217s] writing dependency_links to ../build/visualize/visualize.egg-info/dependency_links.txt
+[1.217s] writing entry points to ../build/visualize/visualize.egg-info/entry_points.txt
+[1.217s] writing requirements to ../build/visualize/visualize.egg-info/requires.txt
+[1.217s] writing top-level names to ../build/visualize/visualize.egg-info/top_level.txt
+[1.298s] reading manifest file '../build/visualize/visualize.egg-info/SOURCES.txt'
+[1.298s] adding license file 'LICENSE'
+[1.299s] writing manifest file '../build/visualize/visualize.egg-info/SOURCES.txt'
+[1.299s] running build
+[1.299s] running build_py
+[1.299s] copying visualize/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/build/visualize/build/lib/visualize
+[1.299s] copying visualize/trajectory_node.py -> /home/naynn/Documents/fc2025/fc2025/src/build/visualize/build/lib/visualize
+[1.299s] copying visualize/pose_node.py -> /home/naynn/Documents/fc2025/fc2025/src/build/visualize/build/lib/visualize
+[1.300s] running install
+[1.303s] running install_lib
+[1.313s] running install_data
+[1.313s] copying resource/visualize -> /home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/ament_index/resource_index/packages
+[1.313s] copying package.xml -> /home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize
+[1.313s] copying launch/visualize.launch.py -> /home/naynn/Documents/fc2025/fc2025/src/install/visualize/share/visualize/launch
+[1.313s] running install_egg_info
+[1.324s] removing '/home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/python3.10/site-packages/visualize-0.0.0-py3.10.egg-info' (and everything under it)
+[1.324s] Copying ../build/visualize/visualize.egg-info to /home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/python3.10/site-packages/visualize-0.0.0-py3.10.egg-info
+[1.324s] running install_scripts
+[1.349s] Installing pose_node script to /home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/visualize
+[1.349s] Installing trajectory_node script to /home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/visualize
+[1.349s] writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/src/build/visualize/install.log'
+[1.383s] Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/visualize' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/visualize/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/visualize/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/visualize build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/visualize/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/visualize/install.log --single-version-externally-managed install_data

@@ -67,7 +67,7 @@ class SwitchToAutoNode(WayPointShit, ParameterShit, RallyPointShit,BaseNode):
         self.wp_push_success_flg = 0
         self.wp_push_success_log_flg = False
         self.mission_fin = False
-
+        self.pull_parameter(True)
 
         self.param_chg_timer = self.create_timer(0.1, self.target_get_timer_cb)
         
@@ -79,7 +79,8 @@ class SwitchToAutoNode(WayPointShit, ParameterShit, RallyPointShit,BaseNode):
          
 
     def target_get_timer_cb(self):
-        if self.stage == 0 and self.state.mode=='RTL':self.stage = 1
+        print(self.state.mode)
+        if self.stage == 0 and self.state.mode=='CIRCLE':self.stage = 1
         if self.stage == 1:
             if self.parameter_new_chg_req == False and self.parameter_chg_success == True:
                 self.parameter_chg_success = False
@@ -89,13 +90,27 @@ class SwitchToAutoNode(WayPointShit, ParameterShit, RallyPointShit,BaseNode):
                 self.chg_parameter("TARGET_NUM", float(self.final_target))
         
         elif self.stage == 2:
-            if self.parameter_new_chg_req == False and self.parameter_chg_success == True:
+            if self.parameters_new_get_req == False and self.parameters_get_success == True:
                 self.parameter_chg_success = False
                 self.stage = 4
             elif self.parameter_new_chg_req == False and self.parameter_chg_success == False:
-                self.parameter_new_chg_req = True
-                self.chg_parameter("TARGET_GET", 1.0)
-        
+                self.parameters_new_get_req = True
+                self.get_parameters(["TARGET_NUM"])
+                if(self.parameters_get_success == True):
+                    self.get_logger().info("获取到参数: " + str(self.parameters_get_ret))
+
+        elif self.stage == 4:
+            print("获取到目标标靶: " + str(self.parameters_get_ret))
+            if(self.paramters_get_ret[0].double_value == 1):
+                self.get_logger().info("切换到AUTO模式")
+                self.state_new_mode_req = True
+                self.state_new_mode = "AUTO"
+                self.state_new_mode_cb()
+                self.stage = 5
+            else:
+                self.get_logger().info("未切换到AUTO模式")
+
+    
     
     def target_num_cb(self, target_num: std_msgs.msg.UInt32) -> None:
         if self.stage == -1:
