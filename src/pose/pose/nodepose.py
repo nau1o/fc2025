@@ -61,26 +61,78 @@ class SwitchToAutoNode(WayPointShit, ParameterShit, RallyPointShit,BaseNode):
         self.rally_hover_flg = False
         self.rally_hover_counter = 0
         self.rally_hover_log = False
-        
+        #self.drop1 = tmp.drop_wp_ccw1#顺时针
+        self.drop1 = tmp.drop_wp_cw1 #逆时针
+        self.drop2 = tmp.drop_wp_ccw2
+        self.drop3 = tmp.drop_wp_ccw3
         # 关于切换的判断
         self.switch_to_auto_log_flg = False
         self.wp_push_success_flg = 0
         self.wp_push_success_log_flg = False
         self.mission_fin = False
         self.pull_parameter(True)
-
+        self.FFFinal_target = None
         self.param_chg_timer = self.create_timer(0.1, self.target_get_timer_cb)
-        
+        self.mode_timer = self.create_timer(0.1, self.mode_get_timer_cb)
+        self.control_state = 0
 
 
     def gps_to_enu_cb(self):
         if self.home == None: return
         self.rally_point_enu = geodetic_to_enu(self.rally_point_gps[0], self.rally_point_gps[1], self.rally_point_gps[2], *self.home)
-         
+    def mode_get_timer_cb(self):
+        if self.control_state == 0:
+            if self.state.mode == 'AUTO':
+                print(self.state.mode)
+            elif self.state.mode == 'RTL':
+                print(self.state.mode)
+                if self.final_target == None:
+                    self.get_logger().info("未获取到目标标靶")
+                    self.FFFinal_target = input("请输入目标标靶编号: ")
+                elif self.final_target != None:
+                    self.get_logger().info("获取到目标标靶: " + str(self.final_target))
+                    self.FFFinal_target = self.final_target
+                self.control_state = State.CLEAR_WP
+
+        if self.control_state == State.CLEAR_WP:
+            if self.waypoint_new_clear_req == False and self.waypoint_clear_success == True:
+                self.waypoint_clear_success == False
+                self.control_state = State.PUSH_WP
+                print(2)
+            elif self.waypoint_new_clear_req == False and self.waypoint_clear_success == False:
+                self.waypoint_new_clear_req = True
+                self.waypoint_clear()
+                print(1)
+        
+        elif self.control_state == State.PUSH_WP:
+            if self.waypoint_new_push_req == False and self.waypoint_push_success == True:
+                self.waypoint_push_success == False
+                self.control_state = State.CLEAR_RALLY
+            elif self.waypoint_new_push_req == False and self.waypoint_push_success == False:
+                #self.waypoint_push(self.drop1)
+                self.waypoint_new_push_req = True
+                print(self.FFFinal_target)
+                if self.FFFinal_target == 1:
+                    print(5)
+                    self.waypoint_push(self.drop1)
+                elif self.FFFinal_target == 2:
+                    self.waypoint_push(self.drop2)
+                elif self.FFFinal_target == 3:   
+                    self.waypoint_push(self.drop3)
+                '''
+                if self.final_target ==1:
+                    print(5)
+                    #self.waypoint_push(self.drop1)
+                    print(4)
+                elif self.final_target ==2:
+                    self.waypoint_push(self.drop2)
+                elif self.final_target ==3:   
+                    self.waypoint_push(self.drop3)
+                '''
+
 
     def target_get_timer_cb(self):
-        print(self.state.mode)
-        if self.stage == 0 and self.state.mode=='CIRCLE':self.stage = 1
+        if self.stage == 0 and self.state.mode=='RTL':self.stage = 1
         if self.stage == 1:
             if self.parameter_new_chg_req == False and self.parameter_chg_success == True:
                 self.parameter_chg_success = False
@@ -95,7 +147,7 @@ class SwitchToAutoNode(WayPointShit, ParameterShit, RallyPointShit,BaseNode):
                 self.stage = 4
             elif self.parameter_new_chg_req == False and self.parameter_chg_success == False:
                 self.parameters_new_get_req = True
-                self.get_parameters(["TARGET_NUM"])
+                self.get_parameters(["TARGET_AUTO"])
                 if(self.parameters_get_success == True):
                     self.get_logger().info("获取到参数: " + str(self.parameters_get_ret))
 

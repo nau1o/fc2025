@@ -19,7 +19,7 @@ from geometry_msgs.msg import PoseStamped, TwistStamped
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 from nav_msgs.msg import Odometry
 import numpy as np
-
+import math
 import mavros_msgs
 import mavros_msgs.srv
 qos_profile = QoSProfile(
@@ -36,7 +36,6 @@ ROOT = FILE # YOLOv5 root directory
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
 ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
-from utils.location import geodetic_to_enu
 from utils.classes import BaseNode,CallBackNode,State,WayPointShit,ParameterShit,RallyPointShit
 from utils import location
 
@@ -44,7 +43,7 @@ class CompetitionPoint_test(WayPointShit,ParameterShit,BaseNode):
     def __init__(self):
         BaseNode.__init__(self, "CompetitionPoint_test")
         self.alt=50
-        '''
+        
         #操场
         self.home = [22.5905424,113.9749189,0]#操场
         self.tar1_gps =[22.59060325,113.97553417,50]
@@ -55,16 +54,19 @@ class CompetitionPoint_test(WayPointShit,ParameterShit,BaseNode):
         self.tar1_gps =[22.8026997,114.2958453,50]
         self.tar2_gps =[22.8025046,114.2957587,50]
         self.tar3_gps =[22.8025135,114.2959447,50]
-        
+        '''
 
-        self.tar1_enu = location.geodetic_to_enu(self.tar1_gps[0],self.tar1_gps[1],self.tar1_gps[2],self.home[0],self.home[1],self.home[2])
-        self.tar2_enu = location.geodetic_to_enu(self.tar2_gps[0],self.tar2_gps[1],self.tar2_gps[2],self.home[0],self.home[1],self.home[2])
-        self.tar3_enu = location.geodetic_to_enu(self.tar3_gps[0],self.tar3_gps[1],self.tar3_gps[2],self.home[0],self.home[1],self.home[2])
+        self.tar1_enu = geodetic_to_enu(self.tar1_gps[0],self.tar1_gps[1],self.tar1_gps[2],self.home[0],self.home[1],self.home[2])
+        self.tar2_enu = geodetic_to_enu(self.tar2_gps[0],self.tar2_gps[1],self.tar2_gps[2],self.home[0],self.home[1],self.home[2])
+        self.tar3_enu = geodetic_to_enu(self.tar3_gps[0],self.tar3_gps[1],self.tar3_gps[2],self.home[0],self.home[1],self.home[2])
         self.rallypoint = None
         self.rtl_rad = 50.0
         self.chg_parameter("WP_LOITER_RAD",self.rtl_rad)
-        self.det_ret= self.gen_detect_waypoint3()
+        self.det_ret= self.gen_detect_waypoint2()
         self.rally = self.gen_rally_waypoint()
+        self.drop_wp_ccw1,self.drop_wp_cw1= self.gen_drop_waypoint(self.home[0], self.home[1], self.home[2], self.rally, self.tar1_gps)
+        self.drop_wp_ccw2,self.drop_wp_cw2 = self.gen_drop_waypoint(self.home[0], self.home[1], self.home[2], self.rally, self.tar2_gps)
+        self.drop_wp_ccw3,self.drop_wp_cw3 = self.gen_drop_waypoint(self.home[0], self.home[1], self.home[2], self.rally, self.tar3_gps)
         
     def center_point(self, point1:list, point2:list):
         # 返回三维坐标的中点，包括高度
@@ -294,4 +296,86 @@ class CompetitionPoint_test(WayPointShit,ParameterShit,BaseNode):
         rally_point[1] = self.rallypoint[1]
         rally_point[2] = self.rallypoint[2]
         
-        return location.enu_to_geodetic(*rally_point, *self.home)
+        return enu_to_geodetic(*rally_point, *self.home)
+    def gen_drop_waypoint(self, home_lat, home_lon, home_alt, rally_gps, target_gps):
+        """生成投弹航线，从集结点圆周的切点飞向投弹点，支持顺时针和逆时针两种切线方向"""
+        self.get_logger().info("Generating drop waypoints from tangent point to target (clockwise and counterclockwise)...")
+        
+        try:
+            
+            
+            # 坐标转换到ENU坐标系
+            target_enu = geodetic_to_enu(target_gps[0], target_gps[1], target_gps[2], home_lat, home_lon, home_alt)
+            rally_enu = geodetic_to_enu(rally_gps[0], rally_gps[1], rally_gps[2], home_lat, home_lon, home_alt)
+            radius = 50.0  # 圆周半径为50米
+
+            # 计算投弹点到集结点的向量和距离
+            dx = target_enu[0] - rally_enu[0]
+            dy = target_enu[1] - rally_enu[1]
+            distance = math.sqrt(dx**2 + dy**2)
+
+            # 检查投弹点是否在圆周内部或过近
+            if distance < radius + 1e-6:
+                self.get_logger().error(f"Target is inside or too close to rally circle (distance {distance:.2f}m < radius {radius:.2f}m)")
+                return (mavros_msgs.srv.WaypointPush.Request(), mavros_msgs.srv.WaypointPush.Request())
+
+            # 计算单位方向向量（从集结点到投弹点）
+            dir_x = dx / distance
+            dir_y = dy / distance
+
+            # 计算切线角度（sin θ = r/d）
+            sin_theta = radius / distance
+            theta = math.asin(sin_theta)
+
+            # 初始化航点请求
+            req_ccw = mavros_msgs.srv.WaypointPush.Request()  # 逆时针
+            req_cw = mavros_msgs.srv.WaypointPush.Request()   # 顺时针
+            req_ccw.waypoints = []
+            req_cw.waypoints = []
+
+            # 计算切点（基于垂直于集结点到投弹点的向量）
+            # 垂直向量（顺时针和逆时针）
+            perp_dir_ccw = np.array([-dir_y, dir_x])  # 逆时针旋转90度
+            perp_dir_cw = np.array([dir_y, -dir_x])   # 顺时针旋转90度
+
+            # 归一化垂直向量
+            perp_dir_ccw = perp_dir_ccw / np.linalg.norm(perp_dir_ccw)
+            perp_dir_cw = perp_dir_cw / np.linalg.norm(perp_dir_cw)
+
+            # 计算逆时针切点（起点）
+            start_enu_ccw = [
+                rally_enu[0] + radius * perp_dir_ccw[0],
+                rally_enu[1] + radius * perp_dir_ccw[1],
+                target_enu[2] + 10  # 切点高度略高
+            ]
+
+            # 计算顺时针切点（起点）
+            start_enu_cw = [
+                rally_enu[0] + radius * perp_dir_cw[0],
+                rally_enu[1] + radius * perp_dir_cw[1],
+                target_enu[2] + 10  # 切点高度略高
+            ]
+
+            # 终点为投弹点
+            end_enu = [
+                target_enu[0],
+                target_enu[1],
+                target_enu[2]  # 保持投弹点高度
+            ]
+
+
+            # 生成逆时针航点
+            req_ccw.waypoints.append(self.generate_waypoint(*start_enu_ccw))
+            req_ccw.waypoints.extend(self.generate_straight_line_waypoints(start_enu_ccw, end_enu, increase=20.)[:-1])
+            self.get_logger().info(f"Generated {len(req_ccw.waypoints)} waypoints for counterclockwise path")
+
+            # 生成顺时针航点
+            req_cw.waypoints.append(self.generate_waypoint(*start_enu_cw))
+            req_cw.waypoints.extend(self.generate_straight_line_waypoints(start_enu_cw, end_enu, increase=20.)[:-1])
+            self.get_logger().info(f"Generated {len(req_cw.waypoints)} waypoints for clockwise path")
+
+            return (req_ccw, req_cw)
+
+        except Exception as e:
+            self.get_logger().error(f"Waypoint generation failed: {str(e)}")
+            return (mavros_msgs.srv.WaypointPush.Request(), mavros_msgs.srv.WaypointPush.Request())

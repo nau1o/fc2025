@@ -1,0 +1,26 @@
+[1.054s] Invoking command in '/home/naynn/Documents/fc2025/fc2025/src/vision': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/vision build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/vision/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/vision/install.log --single-version-externally-managed install_data
+[1.229s] running egg_info
+[1.238s] writing ../build/vision/vision.egg-info/PKG-INFO
+[1.238s] writing dependency_links to ../build/vision/vision.egg-info/dependency_links.txt
+[1.239s] writing entry points to ../build/vision/vision.egg-info/entry_points.txt
+[1.239s] writing requirements to ../build/vision/vision.egg-info/requires.txt
+[1.239s] writing top-level names to ../build/vision/vision.egg-info/top_level.txt
+[1.321s] reading manifest file '../build/vision/vision.egg-info/SOURCES.txt'
+[1.321s] adding license file 'LICENSE'
+[1.322s] writing manifest file '../build/vision/vision.egg-info/SOURCES.txt'
+[1.322s] running build
+[1.322s] running build_py
+[1.322s] copying vision/__init__.py -> /home/naynn/Documents/fc2025/fc2025/src/build/vision/build/lib/vision
+[1.322s] copying vision/vision.py -> /home/naynn/Documents/fc2025/fc2025/src/build/vision/build/lib/vision
+[1.322s] running install
+[1.325s] running install_lib
+[1.336s] running install_data
+[1.336s] copying resource/vision -> /home/naynn/Documents/fc2025/fc2025/src/install/vision/share/ament_index/resource_index/packages
+[1.336s] copying package.xml -> /home/naynn/Documents/fc2025/fc2025/src/install/vision/share/vision
+[1.336s] running install_egg_info
+[1.346s] removing '/home/naynn/Documents/fc2025/fc2025/src/install/vision/lib/python3.10/site-packages/vision-0.0.0-py3.10.egg-info' (and everything under it)
+[1.347s] Copying ../build/vision/vision.egg-info to /home/naynn/Documents/fc2025/fc2025/src/install/vision/lib/python3.10/site-packages/vision-0.0.0-py3.10.egg-info
+[1.347s] running install_scripts
+[1.372s] Installing node script to /home/naynn/Documents/fc2025/fc2025/src/install/vision/lib/vision
+[1.372s] writing list of installed files to '/home/naynn/Documents/fc2025/fc2025/src/build/vision/install.log'
+[1.393s] Invoked command in '/home/naynn/Documents/fc2025/fc2025/src/vision' returned '0': PYTHONPATH=/home/naynn/Documents/fc2025/fc2025/src/build/vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/naynn/Documents/fc2025/fc2025/src/install/vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/vision build --build-base /home/naynn/Documents/fc2025/fc2025/src/build/vision/build install --record /home/naynn/Documents/fc2025/fc2025/src/build/vision/install.log --single-version-externally-managed install_data
